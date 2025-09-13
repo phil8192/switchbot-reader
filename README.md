@@ -100,3 +100,9 @@ dump it to something.
 1757762659,garden,sensor-6,-82,14.2,84,
 ...
 ```
+### publish to MQTT (and optional Influx) — no changes to `switchbot.py`
+
+Install deps:
+
+```bash
+pip install paho-mqtt PyYAML
