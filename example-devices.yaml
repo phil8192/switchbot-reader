@@ -1,0 +1,14 @@
+AA:AA:AA:AA:AA:AA:
+  id: sensor-0
+  type: hub
+  location: some room
+
+BB:BB:BB:BB:BB:BB:
+  id: sensor-1
+  type: sensor
+  location: another room
+
+CC:CC:CC:CC:CC:CC:
+  id: sensor-2
+  type: sensor
+  location: dungeon

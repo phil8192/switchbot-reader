@@ -1,5 +1,6 @@
 import sys
 import yaml
+import json
 import signal
 import asyncio
 import argparse
@@ -62,7 +63,7 @@ def load_device_info() -> dict:
     return sensors
 
 
-def pp(
+def _pp(
         time: int,
         location: str, 
         id: str, 
@@ -77,7 +78,7 @@ def pp(
     print(out)
 
 
-def csv(
+def _csv(
         time: int,
         location: str,
         id: str,
@@ -89,7 +90,7 @@ def csv(
     print(f"{time},{location},{id},{rssi},{temp},{humidity},{light}")
 
 
-def json(
+def _json(
         time: int,
         location: str,
         id: str,
@@ -98,7 +99,7 @@ def json(
         humidity: int,
         light: int | None) -> None:
     if light is None: del light
-    print(locals())
+    print(f"{json.dumps(locals())}")
 
 
 def _print(
@@ -112,11 +113,11 @@ def _print(
         light: int | None) -> None:
     # delegate
     if output == "pp":
-        pp(time, location, id, rssi, temp, humidity, light)
+        _pp(time, location, id, rssi, temp, humidity, light)
     elif output == "csv":
-        csv(time, location, id, rssi, temp, humidity, light)
+        _csv(time, location, id, rssi, temp, humidity, light)
     elif output == "json":
-        json(time, location, id, rssi, temp, humidity, light)
+        _json(time, location, id, rssi, temp, humidity, light)
     else:
         print("eh", file=sys.stderr)
 
