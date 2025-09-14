@@ -1,2 +1,5 @@
 *.txt
 devices.yaml
+tools/ai_generated_console_dash_ncurses
+tools/ai_generated_console_dash_ncurses.o
+
