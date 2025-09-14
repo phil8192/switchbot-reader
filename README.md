@@ -100,3 +100,9 @@ dump it to something.
 1757762659,garden,sensor-6,-82,14.2,84,
 ...
 ```
+
+### pipe to a dashboard
+example ai generated.
+```bash
+SB_STALE_SECS=300 python -u switchbot.py -a -o json | tools/ai_generated_console_dash_ncurses
+```
